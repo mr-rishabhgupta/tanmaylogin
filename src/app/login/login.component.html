@@ -1,0 +1,48 @@
+<section class="sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="log_in_pay">
+                    <h4 class="add_logind"> Welcome </h4>
+                    <h4 class="login_user">Sign In to Your Account</h4>
+                    <div class="pay_register">
+                        <form role="form" method="post" enctype="multipart/form-data" [formGroup]="loginForm"
+                            (ngSubmit)="submit()">
+                            <div class="form_logrow">
+                                <div class="col-md-12 mrgn_b">
+
+                                    <input type="email" name="email" class="form-control registerf" placeholder="Email"
+                                        formControlName="email">
+
+                                    <div class="error"
+                                        *ngIf="(loginForm.get('email')?.touched || isSubmitted) && !loginForm.get('email')?.valid">
+                                        <p>Please enter valid email </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mrgn_b">
+
+                                    <input type="password" name="password" class="form-control registerf"
+                                        placeholder="Password" formControlName="password">
+                                        <div class="error"
+                                        *ngIf="(loginForm.get('password')?.touched || isSubmitted) && !loginForm.get('password')?.valid">
+                                        <p>Please enter valid password </p>
+                                    </div>
+                                </div>
+                                <div class="lost_pasd col-md-12">
+                                    <p class="for_login2"><a href="#">forgot Password? </a>
+                                    </p>
+                                </div>
+                                <div class=" col-md-12">
+                                    <p class="summ_itemd text-center">
+                                        <input name="saveChanges" type="hidden" value="saveChanges">
+                                        <button type="submit" name="login" class="btn  registbtnnew"> Sign In</button>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
